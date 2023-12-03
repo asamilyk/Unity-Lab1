@@ -6,10 +6,6 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public class GameManager
-    {
-        
-    }
 
     void Start()
     {
