@@ -1,21 +1,25 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections.ObjectModel;
+using TMPro;
 
 namespace _Source.Game
 {
+
     public class ResourсeVisual:MonoBehaviour
     {
-        private static GameResource _resource;
-        public GameResource Resource
+        [SerializeField] private ResourceBank _bank;
+        [SerializeField] private List<TMP_Text> _resourceText;
+        private readonly List<GameResource> _typesOfGameResources = new()
+            { GameResource.Food, GameResource.Gold, GameResource.Humans, GameResource.Stone, GameResource.Wood };
+
+        private void Awake()
         {
-            set => _resource = value;
-            get => _resource;
-        }
-        
-        public void ChangeValue()
-        {
-            ObservableCollection<int> resourceAmount = ResourceBank.GetResource(_resource);
+            foreach (GameResource resource in _typesOfGameResources)
+            {
+                _bank.GetResource(resource).OnValueChanged += value => _resourceText[(int)resource].text = $"{value}";
+            }
         }
         
     }

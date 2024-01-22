@@ -7,6 +7,5 @@ namespace _Source.Game
         Wood,
         Stone,
         Gold
-
     }
 }

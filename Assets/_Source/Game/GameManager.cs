@@ -5,11 +5,12 @@ namespace _Source.Game
 {
     public class GameManager:MonoBehaviour
     {
-        private void Awake()
+        [SerializeField] private ResourceBank _resourceBank;
+        private void Start()
         {
-            ResourceBank.ChangeResource(GameResource.Humans, 10);
-            ResourceBank.ChangeResource(GameResource.Food, 5);
-            ResourceBank.ChangeResource(GameResource.Wood, 5);
+            _resourceBank.ChangeResource(GameResource.Humans, 10);
+            _resourceBank.ChangeResource(GameResource.Food, 5);
+            _resourceBank.ChangeResource(GameResource.Wood, 5);
         }
     }
 }
