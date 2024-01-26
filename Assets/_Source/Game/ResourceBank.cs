@@ -5,7 +5,7 @@ namespace _Source.Game
 {
     public class ResourceBank:MonoBehaviour
     {
-         private Dictionary<GameResource, ObservableInt> _resourceDict = new();
+         private readonly Dictionary<GameResource, ObservableInt> _resourceDict = new();
 
          public ResourceBank()
          {
@@ -15,6 +15,8 @@ namespace _Source.Game
              _resourceDict.Add(GameResource.Stone, new ObservableInt(0));
              _resourceDict.Add(GameResource.Wood, new ObservableInt(0));
          }
+         
+         
          /// <summary>
          /// increases the value of the resource r from the dictionary by v
          /// </summary>
@@ -22,9 +24,9 @@ namespace _Source.Game
          /// <param name="v">value</param>
          public void ChangeResource(GameResource r, int v)
         {
-            if (_resourceDict.ContainsKey(r))
+            if (_resourceDict.TryGetValue(r, out var value))
             {
-                _resourceDict[r].Value += v;
+                value.Value += v;
             }
             else
             {
@@ -34,9 +36,9 @@ namespace _Source.Game
 
         public ObservableInt GetResource(GameResource r)
         {
-            if (_resourceDict.ContainsKey(r))
+            if (_resourceDict.TryGetValue(r, out var resource))
             {
-                return _resourceDict[r];
+                return resource;
             }
 
             _resourceDict[r].Value = 0;

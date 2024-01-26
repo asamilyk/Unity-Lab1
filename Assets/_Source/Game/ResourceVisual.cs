@@ -9,8 +9,8 @@ namespace _Source.Game
 
     public class ResourсeVisual:MonoBehaviour
     {
-        [SerializeField] private ResourceBank _bank;
-        [SerializeField] private List<TMP_Text> _resourceText;
+        [SerializeField] private ResourceBank bank;
+        [SerializeField] private List<TMP_Text> resourceText;
         private readonly List<GameResource> _typesOfGameResources = new()
             { GameResource.Food, GameResource.Gold, GameResource.Humans, GameResource.Stone, GameResource.Wood };
 
@@ -18,7 +18,7 @@ namespace _Source.Game
         {
             foreach (GameResource resource in _typesOfGameResources)
             {
-                _bank.GetResource(resource).OnValueChanged += value => _resourceText[(int)resource].text = $"{value}";
+                bank.GetResource(resource).OnValueChanged += (value => resourceText[(int)resource].text = $"{value}");
             }
         }
         
