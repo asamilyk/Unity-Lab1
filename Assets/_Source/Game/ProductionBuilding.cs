@@ -15,7 +15,7 @@ namespace _Source.Game
         {
             StartCoroutine(IncreaseCoroutine());
         }
-        public float ProductionTime => _productionTime;
+        public float ProductionTime => GetSpeed();
 
         /// <summary>
         /// The coroutine, which, after the passage of ProductionTime, increased the corresponding resource by 1
