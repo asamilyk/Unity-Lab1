@@ -14,6 +14,11 @@ namespace _Source.Game
              _resourceDict.Add(GameResource.Humans, new ObservableInt(0));
              _resourceDict.Add(GameResource.Stone, new ObservableInt(0));
              _resourceDict.Add(GameResource.Wood, new ObservableInt(0));
+             _resourceDict.Add(GameResource.FoodProdLvl, new ObservableInt(1));
+             _resourceDict.Add(GameResource.GoldProdLvl, new ObservableInt(1));
+             _resourceDict.Add(GameResource.HumansProdLvl, new ObservableInt(1));
+             _resourceDict.Add(GameResource.StoneProdLvl, new ObservableInt(1));
+             _resourceDict.Add(GameResource.WoodProdLvl, new ObservableInt(1));
          }
          
          

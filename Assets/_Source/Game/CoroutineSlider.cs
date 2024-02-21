@@ -10,7 +10,7 @@ namespace _Source.Game
         [SerializeField] private Image image;
         [SerializeField] private ProductionBuilding _builder;
         
-        [SerializeField] private float _start = 0.00f;
+        private float _start = 0.00f;
         
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace _Source.Game
                 yield return new WaitForEndOfFrame();
             }
             _start = 0;
-            image.fillAmount = dist;
+            image.fillAmount = 0;
             _button.interactable = true;
             yield return new WaitForEndOfFrame();
         }

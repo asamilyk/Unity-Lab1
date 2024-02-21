@@ -12,7 +12,7 @@ namespace _Source.Game
         [SerializeField] private ResourceBank _bank;
         [SerializeField] private Button _button;
         [SerializeField] private TMP_Text _text;
-        [SerializeField] private int _currPrice = 5;
+         private int _currPrice = 5;
 
         private int Price => _currPrice * _bank.GetResource(_bank.GetLevel(_resource)).Value;
 
