@@ -44,5 +44,29 @@ namespace _Source.Game
             _resourceDict[r].Value = 0;
             return _resourceDict[r];
         }
+        
+        /// <summary>
+        /// Returns the level for the required resource
+        /// </summary>
+        /// <param name="resource"></param>
+        /// <returns></returns>
+        public GameResource GetLevel(GameResource resource)
+        {
+            switch (resource)
+            {
+                case GameResource.Food:
+                    return GameResource.FoodProdLvl;
+                case GameResource.Gold:
+                    return GameResource.GoldProdLvl;
+                case GameResource.Humans:
+                    return GameResource.HumansProdLvl;
+                case GameResource.Wood:
+                    return GameResource.WoodProdLvl;
+                case GameResource.Stone:
+                    return GameResource.StoneProdLvl;
+                default:
+                    return GameResource.FoodProdLvl;
+            }
+        }
     }
 }
