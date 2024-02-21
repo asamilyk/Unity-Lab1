@@ -6,6 +6,11 @@ namespace _Source.Game
         Food,
         Wood,
         Stone,
-        Gold
+        Gold,
+        HumansProdLvl,
+        FoodProdLvl,
+        WoodProdLvl,
+        StoneProdLvl,
+        GoldProdLvl
     }
 }
