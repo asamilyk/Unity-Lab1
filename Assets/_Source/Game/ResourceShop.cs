@@ -18,7 +18,7 @@ namespace _Source.Game
 
         void Start()
         {
-            _text.text = $"Add level to\n {_resource.ToString()}\n {Price} coins";
+            _text.text = $"{_resource.ToString()}\n {Price} coins";
         }
 
         /// <summary>
@@ -34,8 +34,10 @@ namespace _Source.Game
             }
             else
             {
-                FillButtom(Color.black);
+                FillButtom(Color.red);
             }
+
+            _text.text = $"{_resource.ToString()}\n ({Price} coins)";
         }
 
         /// <summary>
