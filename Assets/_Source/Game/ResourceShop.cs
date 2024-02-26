@@ -13,12 +13,15 @@ namespace _Source.Game
         [SerializeField] private Button _button;
         [SerializeField] private TMP_Text _text;
          private int _currPrice = 5;
+         private Color initColor;
+
 
         private int Price => _currPrice * _bank.GetResource(_bank.GetLevel(_resource)).Value;
 
         void Start()
         {
             _text.text = $"{_resource.ToString()}\n {Price} coins";
+            initColor = _button.image.color;
         }
 
         /// <summary>
@@ -59,7 +62,7 @@ namespace _Source.Game
                 yield return new WaitForEndOfFrame();
             }
 
-            _button.image.color = Color.white;
+            _button.image.color = initColor;
             _button.interactable = true;
             yield return new WaitForEndOfFrame();
         }
